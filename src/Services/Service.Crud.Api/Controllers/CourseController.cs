@@ -48,7 +48,7 @@ namespace Service.Crud.Api.Controllers
             return result;
         }
 
-        [HttpGet]
+        [HttpDelete]
         [Route("delete-course/{id}")]
         public async Task<ApiResponse<bool>> DeleteCourse(int id)
         {
