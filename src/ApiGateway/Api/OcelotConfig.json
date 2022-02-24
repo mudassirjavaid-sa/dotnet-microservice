@@ -1,0 +1,55 @@
+﻿{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44306"
+  },
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/student/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44394
+        }
+      ],
+      "UpstreamPathTemplate": "/api/student/{everything}",
+      "UpstreamHttpMethod": [ "Get", "PUT", "DELETE", "POST" ],
+      "SwaggerKey": "student"
+    },
+    {
+      "DownstreamPathTemplate": "/course/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44394
+        }
+      ],
+      "UpstreamPathTemplate": "/api/course/{everything}",
+      "UpstreamHttpMethod": [ "Get", "PUT", "DELETE", "POST" ],
+      "SwaggerKey": "course"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "student",
+      "Config": [
+        {
+          "Name": "Student API",
+          "Version": "v1",
+          "Url": "https://localhost:44394/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "course",
+      "Config": [
+        {
+          "Name": "Course API",
+          "Version": "v1",
+          "Url": "https://localhost:44394/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}
